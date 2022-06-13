@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ups.ejercicio_03_03.Controller;
+package ups.ejercicio_03_04.Controller;
 
 import java.time.LocalDate;
 import java.util.List;
-import ups.ejercicio_03_03.Model.Departamento;
-import ups.ejercicio_03_03.Model.Empleado;
-import ups.ejercicio_03_03.Service.EmpleadoService;
+import ups.ejercicio_03_04.Model.Departamento;
+import ups.ejercicio_03_04.Model.Empleado;
+import ups.ejercicio_03_04.Service.EmpleadoService;
 
 /**
  *

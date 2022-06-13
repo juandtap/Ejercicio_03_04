@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ups.ejercicio_03_03.View;
+package ups.ejercicio_03_04.View;
 
 import java.time.LocalDate;
-import ups.ejercicio_03_03.Controller.DepartamentoController;
-import ups.ejercicio_03_03.Controller.EmpleadoController;
-import ups.ejercicio_03_03.Controller.EmpresaController;
-import ups.ejercicio_03_03.Model.Departamento;
-import ups.ejercicio_03_03.Model.Empleado;
-import ups.ejercicio_03_03.Model.Empresa;
+import ups.ejercicio_03_04.Controller.DepartamentoController;
+import ups.ejercicio_03_04.Controller.EmpleadoController;
+import ups.ejercicio_03_04.Controller.EmpresaController;
+import ups.ejercicio_03_04.Model.Departamento;
+import ups.ejercicio_03_04.Model.Empleado;
+import ups.ejercicio_03_04.Model.Empresa;
 
 /**
  *
@@ -60,6 +60,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jButtonAgregarEmpresa = new javax.swing.JButton();
         jButtonMostrarEmpresas = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableEmpresas = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -158,16 +160,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jTableEmpresas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jTableEmpresas);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonAgregarEmpresa)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonMostrarEmpresas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -196,7 +205,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(jTextFieldFundadorEmpresa)
                     .addComponent(jComboBoxPaisesEmpresa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldDireccionEmpresa)))
-            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButtonAgregarEmpresa)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonMostrarEmpresas)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +256,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAgregarEmpresa)
                     .addComponent(jButtonMostrarEmpresas))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "DEPARTAMENTOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), java.awt.Color.black)); // NOI18N
@@ -536,10 +558,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -563,6 +586,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println("");
         }
         System.out.println("----------------------------------------------------------------");
+        
+        mostrarTablaEmpresas();
+        
     }//GEN-LAST:event_jButtonMostrarEmpresasActionPerformed
         // valida la entrada de solo numeros en el campo "codigo" de la clase empresa
     private void jTextFieldCodigoEmpresaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoEmpresaKeyReleased
@@ -671,6 +697,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jTextFieldDireccionEmpresa.setText("");
         jTextFieldFundadorEmpresa.setText("");
     }
+    
+    // tabla empresa
+    private void mostrarTablaEmpresas(){
+        
+    }
+    
+  
     
     //DEPARTAMENTO
     // cargar lista de empresas en comboBox en Departamento se invoca al agregar empresa
@@ -815,9 +848,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTable jTableEmpresas;
     private javax.swing.JTextField jTextFieldCargoEmpleado;
     private javax.swing.JTextField jTextFieldCedulaEmpleado;
     private javax.swing.JTextField jTextFieldCodigoDepartamento;

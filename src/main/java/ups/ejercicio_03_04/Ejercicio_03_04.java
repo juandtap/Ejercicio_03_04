@@ -5,7 +5,7 @@
 
 package ups.ejercicio_03_04;
 
-import ups.ejercicio_03_03.View.VentanaPrincipal;
+import ups.ejercicio_03_04.View.VentanaPrincipal;
 
 /**
  *
