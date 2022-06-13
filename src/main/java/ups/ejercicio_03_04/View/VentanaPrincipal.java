@@ -5,6 +5,8 @@
 package ups.ejercicio_03_04.View;
 
 import java.time.LocalDate;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import ups.ejercicio_03_04.Controller.DepartamentoController;
 import ups.ejercicio_03_04.Controller.EmpleadoController;
 import ups.ejercicio_03_04.Controller.EmpresaController;
@@ -22,6 +24,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public final EmpresaController empresaController;
     public final DepartamentoController departamentoController;
     public final EmpleadoController empleadoController;
+    private TableModel modeloTablaEmpresas;
     
     public VentanaPrincipal() {
         initComponents();
@@ -578,6 +581,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAgregarEmpresaActionPerformed
 
     private void jButtonMostrarEmpresasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarEmpresasActionPerformed
+        
+          mostrarTablaEmpresas();
+        
         System.out.println("EMPRESAS:\n");
         for (Empresa empresa : empresaController.listarEmpresas()) {
             // se aniade fecha actual para mostrar la inforamacion de la empresa que incluye la antiguedad de la misma
@@ -586,9 +592,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             System.out.println("");
         }
         System.out.println("----------------------------------------------------------------");
-        
-        mostrarTablaEmpresas();
-        
+         
     }//GEN-LAST:event_jButtonMostrarEmpresasActionPerformed
         // valida la entrada de solo numeros en el campo "codigo" de la clase empresa
     private void jTextFieldCodigoEmpresaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoEmpresaKeyReleased
@@ -700,6 +704,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     
     // tabla empresa
     private void mostrarTablaEmpresas(){
+        var header = new String[6];
+        header[0] = "Codigo";
+        header[1] = "Nombre";
+        header[2] = "Fundador";
+        header[3] = "Pais";
+        header[4] = "Direccion";
+        header[5] = "Fundacion";
+        
+        var data = new Object[this.empresaController.listarEmpresas().size()][6];
+        
+        for (int i = 0; i < this.empresaController.listarEmpresas().size(); i++) {
+            
+            data[i][0] = this.empresaController.listarEmpresas().get(i).getCodigo();
+            data[i][1] = this.empresaController.listarEmpresas().get(i).getNombre();
+            data[i][2] = this.empresaController.listarEmpresas().get(i).getNombreFundador();
+            data[i][3] = this.empresaController.listarEmpresas().get(i).getPais();
+            data[i][4] = this.empresaController.listarEmpresas().get(i).getDireccion();
+            data[i][5] = this.empresaController.listarEmpresas().get(i).getFechaFundacion();
+             
+        }
+        
+        this.modeloTablaEmpresas = new DefaultTableModel(data,header);
+        this.jTableEmpresas.setModel(modeloTablaEmpresas);
         
     }
     
