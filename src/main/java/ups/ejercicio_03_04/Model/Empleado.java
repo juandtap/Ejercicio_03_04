@@ -109,7 +109,7 @@ public class Empleado {
         if(this.departamento == null){
             return "Empleado{" + "cedula = " + cedula + ", nombre = " + nombre + ", fechaNacimiento = " + fechaNacimiento + ", nacionalidad = " + nacionalidad + ", direccion = " + direccion + ",\n cargo=" + cargo + ", salario=" + salario + ", fechaEntrada = " + fechaEntrada + ", departamento = Sin Asignar ";
         }
-        return "Empleado{" + "cedula = " + cedula + ", nombre = " + nombre + ", fechaNacimiento = " + fechaNacimiento + ", nacionalidad = " + nacionalidad + ", direccion = " + direccion + ",\n cargo = " + cargo + ", salario = " + salario + ", fechaEntrada = " + fechaEntrada + ", departamento =" + departamento.getNombre()+" ";
+        return "Empleado{" + "cedula = " + cedula + ", nombre = " + nombre + ", fechaNacimiento = " + fechaNacimiento + ", nacionalidad = " + nacionalidad + ", direccion = " + direccion + ",\n cargo = " + cargo + ", salario = " + salario + ", fechaEntrada = " + fechaEntrada + ", departamento = " + departamento.getNombre()+" ";
     }
     
     public int calcularEdad(int anioActual){
