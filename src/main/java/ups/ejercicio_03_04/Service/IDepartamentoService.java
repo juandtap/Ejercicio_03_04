@@ -13,7 +13,7 @@ import ups.ejercicio_03_04.Model.Departamento;
  */
 public interface IDepartamentoService {
     public Departamento crearDepartamento(Departamento departamento);
-    public List<Departamento> listarDepartementos();
+    public List<Departamento> listarDepartamentos();
     public Departamento getDepartamentoByCode(int codigo);
     public void actualizarDepartamenti(int codigo, Departamento departamento);
     public Departamento eliminarDepartamento(int codigo);

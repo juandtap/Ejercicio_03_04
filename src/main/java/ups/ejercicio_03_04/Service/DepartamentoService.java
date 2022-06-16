@@ -24,7 +24,7 @@ public class DepartamentoService implements IDepartamentoService{
     }
 
     @Override
-    public List<Departamento> listarDepartementos() {
+    public List<Departamento> listarDepartamentos() {
        return listaDepartamentos;
     }
 

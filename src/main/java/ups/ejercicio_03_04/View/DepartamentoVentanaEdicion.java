@@ -49,6 +49,7 @@ public class DepartamentoVentanaEdicion extends javax.swing.JFrame {
         jLabelCodigo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Edicion Departamento");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "DEPARTAMENTOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), java.awt.Color.black)); // NOI18N
 
@@ -221,13 +222,14 @@ public class DepartamentoVentanaEdicion extends javax.swing.JFrame {
        var departamentoNuevo = new Departamento(this.departamento.getCodigo(), jTextFieldNombreDepartamento.getText(),
                getEmpresaFromComboBox(), jTextFieldUbicacionDepartamento.getText());
         
-       
+       departamentoController.actualizarDepartamento(this.departamento.getCodigo(), departamentoNuevo);
         // Si se tiene cedula del empleado en el campo gerente se le asigna a departamento
         if (!jTextFieldGerenteDepartamento.getText().trim().equals("cedula empleado (OPCIONAL)")){
-     
+          
             var gerente = departamentoController.empleadoService.getEmpleadoByCedula(jTextFieldGerenteDepartamento.getText());
             if (gerente != null) {
-                departamentoController.asignarGerenteDepartemento(departamentoNuevo.getCodigo(), gerente);
+              
+                departamentoController.asignarGerenteDepartamento(departamentoNuevo.getCodigo(), gerente);
                 // a empleado gerente tambien se le asigna el departamento 
                 departamentoController.empleadoService.asignarDepartamento(gerente.getCedula(), departamentoNuevo);
                 
@@ -239,9 +241,6 @@ public class DepartamentoVentanaEdicion extends javax.swing.JFrame {
             }
             
         }
-        
-        departamentoController.actualizarDepartamento(this.departamento.getCodigo(), departamentoNuevo);
-        
         
     }
     

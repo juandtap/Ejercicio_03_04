@@ -26,14 +26,14 @@ public class DepartamentoController {
     }
     
     public List<Departamento> listarDepartamentos(){
-        return departamentoService.listarDepartementos();
+        return departamentoService.listarDepartamentos();
     }
     
     public Departamento getDepartamentoByCode(int code){
         return departamentoService.getDepartamentoByCode(code);
     }
     
-    public void asignarGerenteDepartemento(int codigo, Empleado empleado){
+    public void asignarGerenteDepartamento(int codigo, Empleado empleado){
         departamentoService.asignarGerente(codigo, empleado);
         
     }

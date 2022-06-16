@@ -15,5 +15,8 @@ public interface IEmpleadoService {
     public Empleado crearEmpleado(Empleado empleado);
     public List<Empleado> listarEmpleados();
     public Empleado getEmpleadoByCedula(String cedula);
+    public void actualizarEmpleado(String cedula, Empleado empleadoNuevo);
+    public Empleado eliminarEmpleado(String cedula);
+    public int getPositionEmpleado(Empleado empleado);
     
 }

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 import ups.ejercicio_03_04.Model.Departamento;
 import ups.ejercicio_03_04.Model.Empleado;
+import ups.ejercicio_03_04.Service.DepartamentoService;
 import ups.ejercicio_03_04.Service.EmpleadoService;
 
 /**
@@ -16,6 +17,7 @@ import ups.ejercicio_03_04.Service.EmpleadoService;
  */
 public class EmpleadoController {
     private final EmpleadoService empleadoService = new EmpleadoService();
+    public final DepartamentoService departamentoService = new DepartamentoService();
     
     public Empleado crearEmpleado(String cedula, String nombre, int anioNacimiento, int mesNacimiento, int diaNacimiento, 
             String nacionalidad, String direccion, String cargo, float salario, Departamento departamento){
@@ -29,7 +31,6 @@ public class EmpleadoController {
                 
     }
     
-    
     public List<Empleado> listarEmpleados(){
         return empleadoService.listarEmpleados();
     }
@@ -42,6 +43,19 @@ public class EmpleadoController {
         empleadoService.asignarDepartamento(cedula, departamento);
     }
      
+    public void actualizarEmpleado(String cedula, Empleado empleadoNew){
+        empleadoService.actualizarEmpleado(cedula, empleadoNew);
+    } 
+     
+    public Empleado eliminarEmpleado(String cedula){
+        return empleadoService.eliminarEmpleado(cedula);
+    }
+     
+    
+    
+    
+    
+    
      // Metodos privados validacion datos Empleado
     private boolean validarNumDigitosCedula(String cedula){
         

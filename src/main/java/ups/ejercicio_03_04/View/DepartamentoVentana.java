@@ -252,7 +252,7 @@ public class DepartamentoVentana extends javax.swing.JFrame {
      
             var gerente = departamentoController.empleadoService.getEmpleadoByCedula(jTextFieldGerenteDepartamento.getText());
             if (gerente != null) {
-                departamentoController.asignarGerenteDepartemento(departamentoNuevo.getCodigo(), gerente);
+                departamentoController.asignarGerenteDepartamento(departamentoNuevo.getCodigo(), gerente);
                 // a empleado gerente tambien se le asigna el departamento 
                 departamentoController.empleadoService.asignarDepartamento(gerente.getCedula(), departamentoNuevo);
                 

@@ -228,10 +228,9 @@ public class EmpresaVentanaEdicion extends javax.swing.JFrame {
         jTextFieldDireccionEmpresa.setText(this.empresa.getDireccion());
         jComboBoxPaisesEmpresa.setSelectedItem(this.empresa.getPais());
         jComboBoxAnioEmpresa.setSelectedItem(String.valueOf(this.empresa.getFechaFundacion().getYear()));
-        jComboBoxMesEmpresa.setSelectedItem(String.valueOf(this.empresa.getFechaFundacion().getMonthValue()));
-        jComboBoxDiaEmpresa.setSelectedItem(String.valueOf(this.empresa.getFechaFundacion().getDayOfMonth()));
-        
-        
+        jComboBoxMesEmpresa.setSelectedIndex(this.empresa.getFechaFundacion().getMonthValue() -1);
+        jComboBoxDiaEmpresa.setSelectedIndex(this.empresa.getFechaFundacion().getDayOfMonth() -1);
+
     }
     
     private void actualizar(){
