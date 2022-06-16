@@ -9,6 +9,8 @@ import ups.ejercicio_03_04.Model.Departamento;
 import ups.ejercicio_03_04.Model.Empleado;
 import ups.ejercicio_03_04.Model.Empresa;
 import ups.ejercicio_03_04.Service.DepartamentoService;
+import ups.ejercicio_03_04.Service.EmpleadoService;
+import ups.ejercicio_03_04.Service.EmpresaService;
 
 /**
  *
@@ -16,7 +18,9 @@ import ups.ejercicio_03_04.Service.DepartamentoService;
  */
 public class DepartamentoController {
     private final DepartamentoService departamentoService = new DepartamentoService();
-    
+    public final EmpresaService empresaService = new EmpresaService();
+    public final EmpleadoService empleadoService = new EmpleadoService();
+            
     public Departamento crearDepartamento(int codigo, String nombre, Empresa empresa, String ubicacion){
         return departamentoService.crearDepartamento(new Departamento(codigo, nombre, empresa, ubicacion));
     }
@@ -32,6 +36,15 @@ public class DepartamentoController {
     public void asignarGerenteDepartemento(int codigo, Empleado empleado){
         departamentoService.asignarGerente(codigo, empleado);
         
+    }
+    
+    public void actualizarDepartamento(int codigo, Departamento departamentoNew){
+        departamentoService.actualizarDepartamenti(codigo, departamentoNew);
+    }
+    
+    
+    public Departamento eliminarDepartamento(int codigo){
+        return departamentoService.eliminarDepartamento(codigo);
     }
     
     // Metodos privados validacion departamento:

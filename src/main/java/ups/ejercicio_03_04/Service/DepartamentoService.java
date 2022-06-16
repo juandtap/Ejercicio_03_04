@@ -42,5 +42,32 @@ public class DepartamentoService implements IDepartamentoService{
         getDepartamentoByCode(codigo).asignarGerente(empleado);
         
     }
+
+    @Override
+    public void actualizarDepartamenti(int codigo, Departamento departamentoNew) {
+       int posicion = getPositionDepartaento(getDepartamentoByCode(codigo));
+       listaDepartamentos.get(posicion).setNombre(departamentoNew.getNombre());
+       listaDepartamentos.get(posicion).asignarGerente(departamentoNew.getGerente());
+       listaDepartamentos.get(posicion).setEmpresa(departamentoNew.getEmpresa());
+       listaDepartamentos.get(posicion).setUbicacion(departamentoNew.getUbicacion());
+    }
+
+    @Override
+    public Departamento eliminarDepartamento(int codigo) {
+       var posicion = getPositionDepartaento(getDepartamentoByCode(codigo));
+       return listaDepartamentos.remove(posicion);
+    }
+
+    @Override
+    public int getPositionDepartaento(Departamento departamento) {
+        for (int i = 0; i < listaDepartamentos.size(); i++) {
+            if (departamento.getCodigo() == listaDepartamentos.get(i).getCodigo()) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    
     
 }

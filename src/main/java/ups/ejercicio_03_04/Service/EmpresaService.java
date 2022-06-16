@@ -40,10 +40,6 @@ public class EmpresaService implements IEmpresaService{
     @Override
     public void actualizarEmpresa(int codigo, Empresa empresaNueva) {
         int posicion  = getPositionEmpresa(getEmpresaByCode(codigo));
-        System.out.println("Servicio:: lista de mpresas: "+listaEmpresas);
-        System.out.println("Servicion : codigo recibido: "+codigo);
-        System.out.println("Sevicion :>> "+getEmpresaByCode(codigo).toString());
-        System.out.println("servicio >>>"+posicion);
         listaEmpresas.get(posicion).setNombre(empresaNueva.getNombre());
         listaEmpresas.get(posicion).setNombreFundador(empresaNueva.getNombreFundador());
         listaEmpresas.get(posicion).setPais(empresaNueva.getPais());

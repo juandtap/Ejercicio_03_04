@@ -5,6 +5,8 @@
 
 package ups.ejercicio_03_04;
 
+
+import ups.ejercicio_03_04.View.DepartamentoVentana;
 import ups.ejercicio_03_04.View.EmpresaVentana;
 import ups.ejercicio_03_04.View.VentanaPrincipal;
 
@@ -19,6 +21,8 @@ public class Ejercicio_03_04 {
 //        mainWindow.setVisible(true);
           EmpresaVentana empresaVentana = new EmpresaVentana();
           empresaVentana.setVisible(true);
+          DepartamentoVentana departamentoVentana = new DepartamentoVentana();
+          departamentoVentana.setVisible(true);
                   
     }
 }
