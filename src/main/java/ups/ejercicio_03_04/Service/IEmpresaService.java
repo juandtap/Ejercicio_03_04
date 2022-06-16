@@ -15,5 +15,8 @@ public interface IEmpresaService {
     public Empresa crearEmpresa(Empresa empresa);
     public List<Empresa> listarEmpresas();
     public Empresa getEmpresaByCode(int codigo);
+    public void actualizarEmpresa(int codigo, Empresa empresaNueva);
+    public Empresa eliminarEmpresa(int codigo);
+    public int getPositionEmpresa(Empresa empresa);
     
 }

@@ -15,7 +15,7 @@ import ups.ejercicio_03_04.Model.Empleado;
  */
 public class DepartamentoService implements IDepartamentoService{
     
-    private final List<Departamento> listaDepartamentos = new ArrayList<>();
+    private static final List<Departamento> listaDepartamentos = new ArrayList<>();
 
     @Override
     public Departamento crearDepartamento(Departamento departamento) {

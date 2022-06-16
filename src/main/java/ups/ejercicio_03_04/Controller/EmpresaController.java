@@ -5,10 +5,10 @@
 package ups.ejercicio_03_04.Controller;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 
 import java.util.List;
-import ups.ejercicio_03_04.Model.Departamento;
+
 import ups.ejercicio_03_04.Model.Empresa;
 import ups.ejercicio_03_04.Service.EmpresaService;
 
@@ -35,6 +35,16 @@ public class EmpresaController {
         return null;
         
     }
+    
+    public void actualizarEmpresa(int codigo, Empresa empresaNueva){
+        empresaService.actualizarEmpresa(codigo, empresaNueva);
+    }
+    
+    public Empresa eliminarEmpresa(int codigo){
+        return empresaService.eliminarEmpresa(codigo);
+    }
+    
+    
     
     // Metodos privados validacion Empresa
     

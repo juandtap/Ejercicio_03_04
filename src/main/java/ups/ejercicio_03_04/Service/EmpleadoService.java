@@ -14,7 +14,7 @@ import ups.ejercicio_03_04.Model.Empleado;
  * @author Diego
  */
 public class EmpleadoService implements IEmpleadoService{
-    private final List<Empleado> listaEmpleados = new ArrayList<>();
+    private static final List<Empleado> listaEmpleados = new ArrayList<>();
 
     @Override
     public Empleado crearEmpleado(Empleado empleado) {
